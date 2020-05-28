@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://example" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://example" xmlns:intf="http://example" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://example" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="a" type="xsd:double"/>
+   <element name="b" type="xsd:double"/>
+   <element name="addReturn" type="xsd:double"/>
+   <element name="a1" type="xsd:double"/>
+   <element name="sqrtReturn" type="xsd:double"/>
+   <element name="a2" type="xsd:double"/>
+   <element name="b1" type="xsd:double"/>
+   <element name="divideReturn" type="xsd:double"/>
+   <element name="a3" type="xsd:double"/>
+   <element name="b2" type="xsd:double"/>
+   <element name="minusReturn" type="xsd:double"/>
+   <element name="a4" type="xsd:double"/>
+   <element name="powerReturn" type="xsd:double"/>
+   <element name="a5" type="xsd:double"/>
+   <element name="b3" type="xsd:double"/>
+   <element name="multiplyReturn" type="xsd:double"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sqrtRequest">
+
+      <wsdl:part element="impl:a1" name="a"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="minusResponse">
+
+      <wsdl:part element="impl:minusReturn" name="minusReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideResponse">
+
+      <wsdl:part element="impl:divideReturn" name="divideReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="minusRequest">
+
+      <wsdl:part element="impl:a3" name="a"/>
+
+      <wsdl:part element="impl:b2" name="b"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="powerResponse">
+
+      <wsdl:part element="impl:powerReturn" name="powerReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideRequest">
+
+      <wsdl:part element="impl:a2" name="a"/>
+
+      <wsdl:part element="impl:b1" name="b"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="powerRequest">
+
+      <wsdl:part element="impl:a4" name="a"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="sqrtResponse">
+
+      <wsdl:part element="impl:sqrtReturn" name="sqrtReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyRequest">
+
+      <wsdl:part element="impl:a5" name="a"/>
+
+      <wsdl:part element="impl:b3" name="b"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part element="impl:addReturn" name="addReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyResponse">
+
+      <wsdl:part element="impl:multiplyReturn" name="multiplyReturn"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part element="impl:a" name="a"/>
+
+      <wsdl:part element="impl:b" name="b"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="HelloWorld">
+
+      <wsdl:operation name="add" parameterOrder="a b">
+
+         <wsdl:input message="impl:addRequest" name="addRequest"/>
+
+         <wsdl:output message="impl:addResponse" name="addResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sqrt" parameterOrder="a">
+
+         <wsdl:input message="impl:sqrtRequest" name="sqrtRequest"/>
+
+         <wsdl:output message="impl:sqrtResponse" name="sqrtResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divide" parameterOrder="a b">
+
+         <wsdl:input message="impl:divideRequest" name="divideRequest"/>
+
+         <wsdl:output message="impl:divideResponse" name="divideResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="minus" parameterOrder="a b">
+
+         <wsdl:input message="impl:minusRequest" name="minusRequest"/>
+
+         <wsdl:output message="impl:minusResponse" name="minusResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="power" parameterOrder="a">
+
+         <wsdl:input message="impl:powerRequest" name="powerRequest"/>
+
+         <wsdl:output message="impl:powerResponse" name="powerResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiply" parameterOrder="a b">
+
+         <wsdl:input message="impl:multiplyRequest" name="multiplyRequest"/>
+
+         <wsdl:output message="impl:multiplyResponse" name="multiplyResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="HelloWorldSoapBinding" type="impl:HelloWorld">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sqrt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sqrtRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sqrtResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divide">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divideRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divideResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="minus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="minusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="minusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="power">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="powerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="powerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiply">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="HelloWorldService">
+
+      <wsdl:port binding="impl:HelloWorldSoapBinding" name="HelloWorld">
+
+         <wsdlsoap:address location="http://localhost:8080//services/example/HelloWorld"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
